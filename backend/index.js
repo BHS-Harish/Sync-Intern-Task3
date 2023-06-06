@@ -19,9 +19,7 @@ app.get('/', (req, res) => {
     })
 })
 app.post('/create-pdf', (req, ress) => {
-    pdf.create(pdfTemplate(req.body), {
-        "height": "795px",        // allowed units: mm, cm, in, px
-        "width": "1122px",            // allowed units: mm, cm, in, px
+    pdf.create(pdfTemplate(req.body), {       
         "format": "A4",        // allowed units: A3, A4, A5, Legal, Letter, Tabloid
         "orientation": "portrait",}).toFile('./resume.pdf', (err, res) => {
             if (err) {
