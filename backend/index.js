@@ -24,12 +24,12 @@ app.post('/create-pdf', (req, res) => {
 	//status:false,
 	//message:"resume creation failed"
 	//});;
-	res.json({status:false,message:"Resume creation failed"})
+	res.json({err})
         }
         //res.send(Promise.resolve()).json({
 	//status:true,
 	//message:"resume created"});
-        res.sendFile(`${__dirname}/result.pdf`).json({message:`${__dirname}`})
+        //res.sendFile(`${__dirname}/result.pdf`)
 
     });
 });
