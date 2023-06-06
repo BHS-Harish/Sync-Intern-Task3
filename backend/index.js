@@ -18,18 +18,11 @@ app.get('/',(req,res)=>{
 })
 })
 app.post('/create-pdf', (req, res) => {
-    pdf.create(pdfTemplate(req.body), {}).toFile('result.pdf', (err) => {
+    pdf.create(pdfTemplate(req.body), {}).toFile('./result.pdf', (err) => {
         if(err) {
-            //res.send(Promise.reject()).json({
-	//status:false,
-	//message:"resume creation failed"
-	//});;
-	res.json({err})
+            res.send(Promise.reject())
         }
-        //res.send(Promise.resolve()).json({
-	//status:true,
-	//message:"resume created"});
-        //res.sendFile(`${__dirname}/result.pdf`)
+        res.send(Promise.resolve())
 
     });
 });
