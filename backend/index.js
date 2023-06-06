@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
         "server": true
     })
 })
-app.post('/create-pdf', (req, res) => {
+app.post('/create-pdf', (req, ress) => {
     pdf.create(pdfTemplate(req.body), {
         "height": "795px",        // allowed units: mm, cm, in, px
         "width": "1122px",            // allowed units: mm, cm, in, px
@@ -27,9 +27,7 @@ app.post('/create-pdf', (req, res) => {
             if (err) {
                 return console.log(err)
             }
-            res.json({
-                message:res
-            })
+            ress.json({res})
         });
 });
 app.get('/resume', (req, res) => {
