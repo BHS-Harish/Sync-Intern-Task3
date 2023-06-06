@@ -20,8 +20,7 @@ app.get('/', (req, res) => {
 })
 app.post('/create-pdf', (req, ress) => {
     pdf.create(pdfTemplate(req.body), {       
-        "format": "A4",        // allowed units: A3, A4, A5, Legal, Letter, Tabloid
-        "orientation": "portrait",}).toFile('./resume.pdf', (err, res) => {
+        "width":"795px","height":"1122px"}).toFile('./resume.pdf', (err, res) => {
             if (err) {
                 return console.log(err)
             }
