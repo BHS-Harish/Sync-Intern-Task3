@@ -18,16 +18,15 @@ app.get('/',(req,res)=>{
 })
 })
 app.post('/create-pdf', (req, res) => {
-    pdf.create(pdfTemplate(req.body), {}).toFile('./result.pdf', (err) => {
+    pdf.create(pdfTemplate(req.body),{}).toFile('./resume.pdf', (err,res) => {
         if(err) {
-            res.send(Promise.reject())
+            return console.log(err)
         }
-        res.send(Promise.resolve())
-
+        console.log(res);
     });
 });
 app.get('/resume', (req, res) => {
-    res.sendFile(`${__dirname}/result.pdf`)
+    res.sendFile(`${__dirname}/resume.pdf`)
 })
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
