@@ -3,7 +3,6 @@ import { Row, Col, message } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateTheme } from '../redux/Slices/StepSlice';
 import axios from 'axios';
-import { useNavigate } from 'react-router';
 function DownLoadPage() {
     const theme = useSelector((state) => state.step.theme);
     const data = useSelector((state) => state);
@@ -11,7 +10,6 @@ function DownLoadPage() {
     const [flag, setFlag] = useState(false);
     const [allowNext, setAllowNext] = useState(false);
     const [messageApi, contextHolder] = message.useMessage();
-    const navigate = useNavigate();
     useEffect(() => {
         if (theme !== "") {
             setAllowNext(true);
@@ -68,7 +66,7 @@ function DownLoadPage() {
                 </Col>
                 <Col span={16} offset={4} className="mt-3 mb-4">
                     <button className="primary-outlined-btn fw-bold" style={{ width: "100%" }} onClick={() => {
-                        navigate('/')
+                        window.open('/','_self');
                     }}>Go Back</button>
                 </Col>
             </Row>
