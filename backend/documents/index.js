@@ -98,7 +98,7 @@ module.exports = ({
         text-align:justify;
       }
       .personaldetails{
-        width:220px;
+        width:480px;
         margin-left:20px;
         font-size:12px;
         font-weight:500;
@@ -166,7 +166,7 @@ module.exports = ({
           <ul style="margin-left:30px;margin-top:10px;font-size:12px;">
               ${softSkillsElements}
           </ul>
-          <p class="fw-bold mb-0 left-title">Languages Known</p>
+          <p class="fw-bold mb-0 left-title">Languages</p>
           <ul style="margin-left:30px;margin-top:10px;font-size:12px;">
               ${languageSkillsElements}
           </ul>
