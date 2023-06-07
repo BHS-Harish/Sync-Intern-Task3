@@ -5,7 +5,7 @@ export const PersonalInfoSlice=createSlice({
         firstName:"",
         lastName:"",
         imageUrl:"",
-        dateOfBirth:null,
+        dateOfBirth:{date:"",dateString:""},
         maritalStatus:"",
         nationality:"",
         occupation:"",

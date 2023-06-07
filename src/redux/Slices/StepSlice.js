@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 export const StepSlice=createSlice({
     name:"Step",
     initialState:{
-        current:0,
+        current:5,
         theme:""
     },
     reducers:{

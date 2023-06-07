@@ -7,17 +7,17 @@ module.exports = ({
   step
 }) => {
   let hardSkillsElements="";
-  skills.hardSkills.map((value)=>{
+  skills.hardSkills&&skills.hardSkills?.map((value)=>{
     hardSkillsElements=hardSkillsElements+`<li className="text-small">${value}</li>`
   })
 
   let softSkillsElements="";
-  skills.softSkills.map((value)=>{
+  skills.softSkills&&skills.softSkills?.map((value)=>{
     softSkillsElements=softSkillsElements+`<li className="text-small">${value}</li>`
   })
 
   let languageSkillsElements="";
-  skills.languageSkills.map((value)=>{
+  skills.languageSkills&&skills.languageSkills?.map((value)=>{
     languageSkillsElements=languageSkillsElements+`<li className="text-small">${value}</li>`
   })
 
@@ -76,6 +76,7 @@ module.exports = ({
       }
       .text-small{
         font-size:12px;
+        font-family:'Segoe UI',sans-serif;
       }
       .left-title{
         font-size:20px;

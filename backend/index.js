@@ -19,16 +19,16 @@ app.get('/', (req, res) => {
     })
 })
 app.post('/create-pdf', (req, ress) => {
-    pdf.create(pdfTemplate(req.body), {       
+    pdf.create(pdfTemplate(req.body.data), {       
         "width":"795px","height":"1122px"}).toFile('./resume.pdf', (err, res) => {
             if (err) {
                 return console.log(err)
             }
-            ress.json({res})
+            ress.json({"success":true})
         });
 });
 app.get('/resume', (req, res) => {
-    res.sendFile(`${__dirname}/resume.pdf`)
+    res.download(`${__dirname}/resume.pdf`)
 })
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
