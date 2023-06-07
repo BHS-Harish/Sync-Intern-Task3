@@ -27,7 +27,7 @@ module.exports = ({
     <div class="experience-container">
     <p style="font-size:13px;font-weight:700;color:${step.theme};margin:0;">${value.degree+" "+value.area}</p>
     <p class="college">${value.collegeName}</p>
-    <p class="duration">${value.startDate.dateString.slice(6,10)} - ${value.endDate.present?"Present":value.endDate.dateString.slice(6,10)}</p>
+    <p class="duration">${value.startDate.date.slice(0,4)} - ${value.endDate.present?"Present":value.endDate.date.slice(0,4)}</p>
   </div>
     `
   })
@@ -38,7 +38,7 @@ module.exports = ({
     <div class="experience-container">
     <p style="font-size:13px;font-weight:700;color:${step.theme};margin:0;">${value.position}</p>
     <p class="college">${value.companyName}</p>
-    <p class="duration">${value.startDate.dateString.slice(6,10)} - ${value.endDate.present?"Present":value.endDate.dateString.slice(6,10)}</p>
+    <p class="duration">${value.startDate.date.slice(0,4)} - ${value.endDate.present?"Present":value.endDate.date.slice(0,4)}</p>
   </div>
     `
   })
